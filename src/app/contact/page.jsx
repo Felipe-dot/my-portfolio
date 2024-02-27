@@ -1,11 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 const ContactPage = () => {
   const [sucess, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const text = "Say Hello";
+  const text = "Diga Olá";
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setError(false);
+    setSuccess(false);
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setSuccess(true);
+          form.current.reset();
+        },
+        () => {
+          setError(true);
+        }
+      );
+  };
 
   return (
     <motion.div
@@ -17,7 +44,7 @@ const ContactPage = () => {
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 mid:px-12 lg:px-20 xl:48">
         {/* TEXT CONTAINER */}
         <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
-          <motion.div>
+          <div>
             {text.split("").map((letter, index) => (
               <motion.span
                 initial={{ opacity: 1 }}
@@ -33,33 +60,37 @@ const ContactPage = () => {
               </motion.span>
             ))}
             👨‍💻
-          </motion.div>
+          </div>
         </div>
         {/* FORM CONTAINER */}
-        <form className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24">
-          <span>Dear Felipe Dot,</span>
+        <form
+          onSubmit={sendEmail}
+          ref={form}
+          className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
+        >
+          <span>Querido Felipe,</span>
           <textarea
             rows={6}
+            name="user_message"
             className="bg-transparent border-b-2 border-b-black outline-none resize-none"
           />
-          <span>My mail address is:</span>
+          <span>Meu endereço de email é:</span>
           <input
+            name="user_email"
             type="text"
             className="bg-transparent border-b-2 border-b-black outline-none "
           />
-          <span>Regards</span>
+          <span>Cumprimentos</span>
           <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
-            Send
+            Enviar
           </button>
           {sucess && (
             <span className="text-green-600 font-semibold">
-              Your message has been sent successfully!
+              Sua mensagem foi enviada com sucesso!
             </span>
           )}
           {error && (
-            <span className="text-red-500 font-semibold">
-              Something went wrong!
-            </span>
+            <span className="text-red-500 font-semibold">Algo deu errado!</span>
           )}
         </form>
       </div>
