@@ -23,7 +23,7 @@ const Homepage = () => {
           />
         </div>
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 flex flex-col  lg:h-full lg:w-1/2 gap-8 items-center justify-center">
+        <div className="h-full flex flex-col lg:h-full lg:w-1/2 gap-8 items-center justify-center">
           {/* title */}
           <h1 className="text-4xl md:text-6xl font-bold">
             Do código ao impacto, criando experiências memoráveis.
@@ -36,7 +36,7 @@ const Homepage = () => {
             expectativas.
           </p>
           {/* buttons */}
-          <div className="w-full flex gap-4">
+          <div className="w-full flex gap-4 mb-2">
             <Link href="/portfolio">
               <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
                 Veja meus trabalhos
