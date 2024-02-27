@@ -46,17 +46,25 @@ const AboutPage = () => {
         <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:w-1/2">
           {/* biograpgy container */}
           <div className="flex flex-col gap-12 justify-center">
-            <h1 className="font-bold text-2xl ">BIOGRAPHY</h1>
-            <p className="text-lg">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
-              aliquid eaque voluptatibus atque minus expedita sint praesentium
-              harum sapiente unde. Deleniti blanditiis placeat alias reiciendis
-              autem aliquam quo delectus expedita?
+            <h1 className="font-bold text-2xl ">Biografia</h1>
+            <p className="text-lg text-justify">
+              Olá, me chamo Felipe, tenho 22 anos e sou formado em Ciência da
+              Computação, além disso sou um entusiasta incansável do mundo
+              digital. Meu conhecimento abrange uma ampla gama de tecnologias e
+              de boas práticas no desenvolvimento, refletindo minha dedicação em
+              explorar e dominar novas ferramentas. Sou uma pessoa versátil,
+              encaro cada desafio como uma oportunidade de aprendizado e
+              crescimento. Na minha visão, tecnologias novas não são obstáculos,
+              mas sim convites para expandir meu repertório e aprimorar minhas
+              habilidades.
             </p>
             <span className="italic">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Truth can only be found in one place: the code.
             </span>
-            <div></div>
+
+            <div className="self-end">
+              <span>Uncle Bob</span>
+            </div>
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
               animate={{ opacity: 1, y: "10px" }}
@@ -88,7 +96,7 @@ const AboutPage = () => {
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl "
             >
-              SKILLS
+              HABILIDADES
             </motion.h1>
             {/* SKILL LIST */}
             <motion.div
@@ -140,7 +148,7 @@ const AboutPage = () => {
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl "
             >
-              EXPERIENCE
+              EXPERIÊNCIA
             </motion.h1>
             {/* EXPERIENCE LIST */}
             <motion.div
@@ -149,33 +157,23 @@ const AboutPage = () => {
             >
               <ListItem
                 left={{
-                  jobTitle: "Senior JavaScript Engineer",
+                  jobTitle: "Desenvolvedor de Software",
                   jobDesc:
-                    "I led web development, offering expertise in JavaScript frameworks.",
-                  jobDate: "2024 - Present",
-                  jobCompany: "Apple",
+                    "Eu criei interfaces mobile inovadoras usando Flutter",
+                  jobDate: "2022 - 2023",
+                  jobCompany: "UESPI",
                 }}
                 right={{}}
               />
               <ListItem
                 right={{
-                  jobTitle: "Senior React Developer",
+                  jobTitle: "Suporte de TI",
                   jobDesc:
-                    "I spearheaded React-based application development, leveraging advanced skills.",
-                  jobDate: "2019 - 2024",
-                  jobCompany: "Microsoft",
+                    "Prestação de suporte técnico em tecnologia para o campus universitário",
+                  jobDate: "2021 - 2022",
+                  jobCompany: "UESPI",
                 }}
                 left={{}}
-              />
-              <ListItem
-                left={{
-                  jobTitle: "Freelancer",
-                  jobDesc:
-                    " I provided web solutions, applying a range of technologies to address client requirements.",
-                  jobDate: "2010 - 2019",
-                  jobCompany: "",
-                }}
-                right={{}}
               />
             </motion.div>
           </div>
