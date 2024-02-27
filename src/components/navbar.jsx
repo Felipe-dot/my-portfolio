@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 
 const links = [
   { url: "/", title: "Home" },
-  { url: "/about", title: "About" },
-  { url: "/portfolio", title: "Portfolio" },
-  { url: "/contact", title: "Contact" },
+  { url: "/about", title: "Sobre" },
+  { url: "/portfolio", title: "Portfólio" },
+  { url: "/contact", title: "Contato" },
 ];
 
 const Navbar = () => {
@@ -83,22 +83,32 @@ const Navbar = () => {
           href="/"
           className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
         >
-          <span className="text-white mr-1">Felipe</span>
+          <span className="text-white  ml-1 mr-1">Felipe</span>
           <span className="w-12 h-8 rounded bg-white text-black flex items-center justify-center">
-            -dot
+            dot
           </span>
         </Link>
       </div>
       {/* SOCIAL LINKS */}
       <div className="hidden md:flex gap-4 w-1/3  justify-end">
-        <Link href="">
-          <Image src="/github.png" alt="" width={24} height={24} />
+        <Link href="https://github.com/Felipe-dot">
+          <Image src="/github.png" alt="github icon" width={24} height={24} />
         </Link>
-        <Link href="">
-          <Image src="/linkedin.png" alt="" width={24} height={24} />
+        <Link href="https://www.linkedin.com/in/felipe-dot/">
+          <Image
+            src="/linkedin.png"
+            alt="linkedin icon"
+            width={24}
+            height={24}
+          />
         </Link>
-        <Link href="">
-          <Image src="/instagram.png" alt="" width={24} height={24} />
+        <Link href="https://www.instagram.com/luisfelipe_az/">
+          <Image
+            src="/instagram.png"
+            alt="instagram icon"
+            width={24}
+            height={24}
+          />
         </Link>
       </div>
       {/* RESPNSIVE MENU */}
